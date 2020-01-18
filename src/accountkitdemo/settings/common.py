@@ -127,5 +127,8 @@ STATICFILES_FINDERS = (
 )
 
 
-ACCOUNT_KIT_APP_ID = env('APP_ID')
 ACCOUNT_KIT_API_VERSION = 'v1.0'
+ACCOUNT_KIT_ME_ENDPOINT_BASE_URL = 'https://graph.accountkit.com/v1.0/me'
+ACCOUNT_KIT_TOKEN_EXCHANGE_BASE_URL = 'https://graph.accountkit.com/v1.0/access_token'
+ACCOUNT_KIT_APP_ID = env('APP_ID')
+ACCOUNT_KIT_APP_SECRET = env('APP_SECRET')
