@@ -1,0 +1,56 @@
+{% extends "__base.html" %}
+
+{% block container %}
+<div class="h-100 d-flex justify-content-center align-items-center">
+    <div class="card" style="height:400px; width:400px;">
+        <div class="card-body">
+        <h5 class="card-title">
+            Account Kit Login Demo
+        </h5>
+        <div class="row mt-5">
+            <div class="col-12">
+                <button type="button" class="btn btn-primary btn-block" onClick="loginWithSMS()">Login With SMS</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+<script type="text/javascript">
+  AccountKit_OnInteractive = function(){
+    AccountKit.init(
+      {
+        appId:'{{ app_id }}',
+        state:"{{csrf_token}}",
+        version:"{{ api_version }}",
+        debug: true,
+        redirect:"/sendcode"
+      }
+    );
+  };
+  function loginCallback(response) {
+    if (response.status === "PARTIALLY_AUTHENTICATED") {
+      document.getElementById("code").value = response.code;
+      document.getElementsByName("csrfmiddlewaretoken")[0].value = response.state;
+      document.getElementById("loginForm").submit();
+
+      // here send a ajax call.
+    }
+    else if (response.status === "NOT_AUTHENTICATED") {
+      // handle authentication failure
+    }
+    else if (response.status === "BAD_PARAMS") {
+      // handle bad parameters
+    }
+  }
+
+  function loginWithSMS(){
+    AccountKit.login("PHONE",{}, loginCallback);
+  }
+</script>
+{% endblock %}

@@ -47,6 +47,7 @@ THIRD_PARTY_APPS = ()
 
 OUR_APPS = (
     'base',
+    'logindemo',
 )
 
 INSTALLED_APPS = CORE_APPS + OUR_APPS + THIRD_PARTY_APPS
@@ -124,3 +125,7 @@ STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     "django.contrib.staticfiles.finders.FileSystemFinder",
 )
+
+
+ACCOUNT_KIT_APP_ID = env('APP_ID')
+ACCOUNT_KIT_API_VERSION = 'v1.0'
