@@ -1,7 +1,7 @@
 
 # accountkitdemo
 
-Created using Django.
+This repo implements Facebook Account Kit using Django. Blog post can be found at https://medium.com/all-about-django/how-to-implement-passwordless-login-in-django-using-facebook-account-kit-e31a7f8a2be4
 
 ## Setup Instructions
 
