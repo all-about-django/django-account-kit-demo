@@ -3,6 +3,16 @@
 
 This repo implements Facebook Account Kit using Django. Blog post can be found at https://medium.com/all-about-django/how-to-implement-passwordless-login-in-django-using-facebook-account-kit-e31a7f8a2be4
 
+## Snaps
+
+* Login Page
+
+![loginpage](.snaps/logindemo.png "Login Page")
+
+* After Login Page
+
+![afterlogin](.snaps/afterlogin.png "Page after Login is successful")
+
 ## Setup Instructions
 
 First make sure that you have the following installed.
